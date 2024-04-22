@@ -31,7 +31,7 @@ time.sleep(2.5)
 
 actions = ActionChains(driver)
 
-with open("res/credentials.json", 'r') as file:
+with open("credentials.json", 'r') as file:
     creds = json.loads(file.read())
     # logs in the popup login screen
     popup_logon(creds)
@@ -43,12 +43,11 @@ with open("res/credentials.json", 'r') as file:
 # wait for site to fully load
 time.sleep(10)
 matches = driver.find_element(By.TAG_NAME, "pre").text
+
 # parse the plaintext to json
-# TODO check the delay in case the json parse happens sooner than data fetch
+
 data = json.loads(matches)
 
-# TODO Save json
-
-# print(data)
+print(data)
 
 driver.quit()
