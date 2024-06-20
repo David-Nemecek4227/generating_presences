@@ -88,10 +88,10 @@ for event in events:
 if 'events_users' not in system_data:
     system_data['events_users'] = []
 if 'event_groups' not in system_data:
-    system_data['event_groups'] = []
+    system_data['events_groups'] = []
 
 system_data['events_users'].extend(new_events_users)
-system_data['event_groups'].extend(new_event_groups)
+system_data['events_groups'].extend(new_event_groups)
 
 # Uložení aktualizovaných dat zpět do systemdata.json
 with open('systemdata.json', 'w', encoding='utf-8') as f:
